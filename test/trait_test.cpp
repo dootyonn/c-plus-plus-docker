@@ -113,4 +113,9 @@ TEST(TraitTest, test_rank) {
     static constexpr int B[][1] = { { 1 }, { 2 }, { 3 } };
     static_assert(my_rank<decltype(B)>::value == 2u);
   }
+
+  {
+    static constexpr char B[] = "This is a string";
+    static_assert(my_rank<decltype(B)>::value == 1u);
+  }
 }

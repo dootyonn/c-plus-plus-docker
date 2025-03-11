@@ -23,7 +23,6 @@ RUN mkdir build
 WORKDIR /app/build
 RUN cmake .. && make
 
-
 # Expose the port on which the API will listen
 EXPOSE 8080
 

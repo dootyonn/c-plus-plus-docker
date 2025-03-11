@@ -8,6 +8,8 @@ add_executable(
     functional_raii.cpp
     range_test.cpp
     variadic_test.cpp
+    sync_test.cpp
+    lambda_test.cpp
 )
 
 target_include_directories(
@@ -17,3 +19,5 @@ target_include_directories(
 )
 
 target_link_libraries(okapitest gtest gtest_main)
+
+gtest_discover_tests(okapitest)

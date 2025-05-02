@@ -30,7 +30,7 @@ struct is_pointer : public false_type
 };
 
 template <class T>
-struct is_pointer<T *> : true_type
+struct is_pointer<T *> : public true_type
 {
 };
 

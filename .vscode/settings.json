@@ -72,6 +72,9 @@
     "typeinfo": "cpp",
     "variant": "cpp",
     "barrier": "cpp",
-    "future": "cpp"
-  }
+    "future": "cpp",
+    "text_encoding": "cpp",
+    "*.ipp": "cpp"
+  },
+  "cSpell.enabled": false
 }

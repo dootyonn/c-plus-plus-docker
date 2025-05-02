@@ -1,30 +1,21 @@
-# Use the official Ubuntu image as the base image
-FROM ubuntu:24.04
+FROM ubuntu:25.04
 
-# Set the working directory in the container
-WORKDIR /app
-
-# Install necessary dependencies
 RUN apt-get update && apt-get install -y \
-  g++ \
-  ninja-build \
-  cmake \
-  gdb \
-  libgtest-dev \
-  libcpprest-dev \
-  libssl-dev
+    build-essential \
+    ninja-build \
+    cmake \
+    libgtest-dev \
+    libcpprest-dev \
+    libssl-dev
 
+WORKDIR /app
+COPY . /app
 
-# Copy the source code into the container
-COPY * .
+RUN cmake -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local .
+RUN cmake --build build
+RUN ctest --test-dir build
+RUN cmake --install build
 
-# Compile the C++ code
-RUN mkdir build
-WORKDIR /app/build
-RUN cmake .. && make
-
-# Expose the port on which the API will listen
 EXPOSE 8080
 
-# Command to run the API when the container starts
-CMD ["/app/build/okapi"]
+ENTRYPOINT [ "/usr/local/bin/okapi" ]

@@ -21,7 +21,7 @@ public:
     }
 
     void handle_get(http_request request) {
-        ucout << "Received GET request" << std::endl;
+        std::cout << "Received GET request" << std::endl;
         json::value response;
         response[U("message")] = json::value::string(U("OK"));
         request.reply(status_codes::OK, response);

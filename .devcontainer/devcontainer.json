@@ -17,7 +17,8 @@
 				"ms-vscode.cpptools",
 				"ms-vscode.cmake-tools",
 				"ms-azuretools.vscode-docker",
-				"peterj.proto"
+				"peterj.proto",
+				"ms-azuretools.vscode-containers"
 			]
 		}
 	},

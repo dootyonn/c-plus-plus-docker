@@ -14,6 +14,8 @@ find_package(Protobuf REQUIRED)
 protobuf_generate_cpp(PROTO_SRCS PROTO_HDRS proto/example.proto)
 
 add_executable(okapitest
+    laser_shooter_2d.cpp
+    increase_the_digits.cpp
     trait_test.cpp
     functional_raii.cpp
     range_test.cpp

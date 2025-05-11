@@ -8,10 +8,8 @@
             "name": "(gdb) Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/src/routeguide",
-            "args": [
-                "--db_path=${workspaceFolder}/src/route_guide_db.json"
-            ],
+            "program": "${workspaceFolder}/build/test/okapitest",
+            "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
